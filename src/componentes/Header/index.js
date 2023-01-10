@@ -1,7 +1,8 @@
 import logo from "../../imagens/logo.svg";
 import styled from "styled-components";
 
-const HeaderComponents = styled.header`
+const HeaderContainer = styled.header`
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap");
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
@@ -16,7 +17,7 @@ const HeaderComponents = styled.header`
 
 function Header() {
   return (
-    <HeaderComponents>
+    <HeaderContainer>
       <img src={logo} alt="logo"></img>
       <ul>
         <li>
@@ -29,7 +30,7 @@ function Header() {
           <a href="#sobre-mim">Sobre mim</a>
         </li>
       </ul>
-    </HeaderComponents>
+    </HeaderContainer>
   );
 }
 
