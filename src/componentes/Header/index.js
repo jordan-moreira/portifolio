@@ -2,17 +2,36 @@ import logo from "../../imagens/logo.svg";
 import styled from "styled-components";
 
 const HeaderContainer = styled.header`
-  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap");
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0 20px;
   color: #fff;
   background-color: #020721;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 1.4vw;
+  line-height: 100%;
+  img {
+    margin: 0 0 0 1.4vw;
+  }
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50vw;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4vw;
+    line-height: 100%;
+  }
 `;
 
 function Header() {
