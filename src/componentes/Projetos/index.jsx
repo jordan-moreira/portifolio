@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Card from "../Card";
+const axios = require("axios");
 
 const ProjetosContainer = styled.div`
   text-align: center;
@@ -19,6 +20,28 @@ const ProjetosContainer = styled.div`
     flex-wrap: wrap;
   }
 `;
+
+let Links = 0;
+async function getLinks(url) {
+  try {
+    const response = await axios.get(url);
+    return response.data
+      .map((repo) => {
+        return {
+          link: `https://jordan-moreira.github.io/${repo.name}/`,
+          name: repo.name,
+        };
+      })
+      .filter(
+        (obj) =>
+          !obj.link.match(/desafio-\d/g) && !obj.link.match(/portifolio/g)
+      );
+  } catch (error) {
+    console.error(error);
+  }
+}
+getLinks("https://api.github.com/users/jordan-moreira/repos");
+
 function Projetos() {
   return (
     <ProjetosContainer id="projetos">
